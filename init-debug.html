@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Telegram Init Data</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <h1>Telegram Init Data Debugger</h1>
+  <pre id="output">Loading...</pre>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+
+    const initData = tg.initData;
+    const initDataUnsafe = tg.initDataUnsafe;
+
+    const output = {
+      initData,
+      initDataUnsafe,
+    };
+
+    document.getElementById("output").textContent = JSON.stringify(output, null, 2);
+  </script>
+</body>
+</html>
